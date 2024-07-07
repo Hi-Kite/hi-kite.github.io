@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>语录</title>
+        <style>
+            body {
+                padding: 10px;
+                color: white;
+                text-align: center;
+                background-color: rgb(79, 157, 196);
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="color: rgb(255, 186, 58);">语录</h1>
+        <img src="https://bkimg.cdn.bcebos.com/pic/9e3df8dcd100baa1a5fd20114d10b912c9fc2e42" width="20%" /><br />
+        <button onclick="man()" style="height: 50px; width: 100px;">MAN!</button>
+        <p>注意：第一次点击可能播放音频会有点慢，请耐心等待。若始终无法播放出声音，请尝试使用系统浏览器打开。</p>
+        <script>
+            function man() {
+                const m = new Audio("https://dlink.host/musics/aHR0cHM6Ly9vbmVkcnYtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvc3Rvcl9vbmVkcnZfb25taWNyb3NvZnRfY29tL0VmMXIwLWtvYWNoSHB5cm04eU1WOHdrQjg4YzRBWXJBNWdMQ2plZVFpanF0Wnc.mp3")
+                m.play()
+            }
+        </script>
+    </body>
+</html>
