@@ -1,57 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kite的小窝 - imfza - 风筝</title>
+        <meta name="description" content="Kite的个人主页 - 学生、技术爱好者，分享学习与创作">
+        <meta name="keywords" content="Kite, imfza, 学生, 个人主页, 前端开发">
+        <title>Kite | imfza - 技术爱好者的小窝</title>
+        
+        <!-- 引入Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
+        
         <style>
-            body {
-                padding: 5em;
-                color: white;
-                background:
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent,
-                    transparent 25%,
-                    tomato 0,
-                    tomato 50%
-                ),
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 25%,
-                    dodgerblue 0,
-                    dodgerblue 50%
-                ), wheat;
-                background-size: 10em 10em;
-                background-blend-mode: multiply;
+            :root {
+                --primary-color: rgba(0, 191, 255, 0.15);
+                --blur-strength: blur(12px);
+                --transition-fast: 0.2s ease-in-out;
             }
-            /* This was made with GlassGenerator.netlify.app */ 
-            .glass-container{
-                margin: auto;
-                height: 400px;
-                color: white;
-                gap: 20px;
-                border-radius: 10px;
-                backdrop-filter: blur(5px);
-                background-color: rgba(0,191,255, 0.075);
-                box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
-                border: 2px rgba(255,255,255,0.4) solid;
-                border-bottom: 2px rgba(40,40,40,0.35) solid;
-                border-right: 2px rgba(40,40,40,0.35) solid;
 
-                padding: 30px;
-                text-align: center;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                padding: 2rem;
+                color: rgba(255, 255, 255, 0.95);
+                font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+                line-height: 1.6;
+                
+                background: 
+                    linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                background-size: 400% 400%;
+                animation: gradientBG 15s ease infinite;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .glass-container {
+                width: min(90%, 600px);
+                padding: 2.5rem;
+                background: var(--primary-color);
+                backdrop-filter: var(--blur-strength);
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 
+                    0 8px 32px rgba(0, 0, 0, 0.1),
+                    inset 0 4px 8px rgba(255, 255, 255, 0.1);
+                transition: transform var(--transition-fast);
+            }
+
+            .glass-container:hover {
+                transform: translateY(-5px);
+            }
+
+            h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1rem;
+                background: linear-gradient(45deg, #fff, #a5d8ff);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+                font-weight: 500;
+                opacity: 0.9;
+            }
+
+            .links {
+                display: flex;
+                gap: 1.5rem;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+
+            .link-item {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.8rem 1.5rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                text-decoration: none;
+                transition: var(--transition-fast);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .link-item:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .ipv6-badge {
+                margin-top: 2rem;
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+                transition: transform var(--transition-fast);
+            }
+
+            .ipv6-badge:hover {
+                transform: scale(1.05);
+            }
+
+            @keyframes gradientBG {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            @media (max-width: 768px) {
+                body {
+                    padding: 1rem;
+                }
+                
+                .glass-container {
+                    padding: 1.5rem;
+                }
+                
+                h1 {
+                    font-size: 2rem;
+                }
+                
+                .links {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
             }
         </style>
     </head>
     <body>
         <div class="glass-container">
-            <h1>Kite</h1>
-            <h3>Hi, there!👋</h1>
-            <p>是一个一个学生啊</p>
-            <a href="https://space.bilibili.com/450967115" target="_blank" style="color: white;">B站主页（imfza）</a>
-            <a href="https://ipw.cn/ipv6webcheck/?site=imfz.cn" title="本站支持IPv6访问" target='_blank'><img style='display:inline-block;vertical-align:middle' alt="本站支持IPv6访问" src="https://static.ipw.cn/icon/ipv6-s1.svg"></a>
+            <h1>Kite 🪁</h1>
+            <h3>Hi，你好呀！欢迎来到我的数字小窝～</h3>
+            <p>📚 全栈学习中的学生开发者<br>
+               💡 热爱技术 | 喜欢折腾 | 开源爱好者</p>
+            
+            <div class="links">
+                <a href="https://space.bilibili.com/450967115" 
+                   class="link-item"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    📺 BiliBili 主页
+                </a>
+                
+                <a href="https://github.com/imfza" 
+                   class="link-item"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    👨💻 GitHub 仓库
+                </a>
+            </div>
+
+            <a href="https://ipw.cn/ipv6webcheck/?site=imfz.cn" 
+               class="ipv6-badge"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="本站支持IPv6访问">
+                <img src="https://static.ipw.cn/icon/ipv6-s1.svg" 
+                     alt="IPv6访问支持徽章"
+                     width="120">
+            </a>
         </div>
     </body>
 </html>
